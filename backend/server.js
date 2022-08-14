@@ -5,23 +5,23 @@ import productRouter from "./routers/productRouter.js";
 import userRouter from "./routers/userRouter.js";
 import orderRouter from "./routers/orderRouter.js";
 
-dotenv.config();
+dotenv.config({path:"../.env"});
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/MobiWorLD").then(() => {
+
+const DB = `${process.env.MONGODB_URL}`
+
+
+mongoose.connect( DB ||"mongodb://localhost/MobiWorLD").then(() => {
     console.log("Connection successfull"); 
  }).catch((e) => console.log("No connection"))
 
 
-// app.get("/api/products",(req,res)=>{
-//     res.send(data.products)
-// })
-
 app.use("/api/users" , userRouter);
-app.use("/api/products", productRouter)
+app.use("/api/products", productRouter);
 app.use("/api/orders", orderRouter)
 app.get("/api/config/paypal" , (req,res)=>{
     res.send(`${process.env.PAYPAL_CLIENT_ID}` || "sb")
