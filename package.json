@@ -19,7 +19,11 @@
   "description": "MobiworLD website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "keywords": [
     "MobiworLD",
@@ -31,3 +35,4 @@
     "eslint": "^8.21.0"
   }
 }
+
