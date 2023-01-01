@@ -5,9 +5,12 @@ export const listProducts =() => async(dispatch)=>{
         type: PRODUCT_LIST_REQUEST
     })
     try {
+        console.log("try part of listProducts->")
         const { data } = await axios.get("/api/products");
+        console.log("data(listProducts-action)--->",data)
         dispatch({type: PRODUCT_LIST_SUCCESS , payload :data})
     } catch (error) {
+        console.log("data(listProducts-action)--->")
         dispatch({type:PRODUCT_LIST_FAILED , payload :error.message})
         
     }

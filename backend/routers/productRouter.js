@@ -7,16 +7,19 @@ import mongosh from "mongodb";
 
 const productRouter = express.Router();
 
-
+ 
 productRouter.get("/" , expressAsyncHandler(async(req,res)=>{
     // const products = await Product.find({});
+    console.log("productRouter(/)------>")
     const products = await Product.find();
+    console.log("productRouter('/')-------->",products)
     res.send(products);
 }))
 
 productRouter.get("/seed" , expressAsyncHandler(async(req,res)=>{
     // await Product.remove({});
     const createProducts = await Product.insertMany(data.products);
+    console.log("inserMany(/seed)------>",createProducts)
     res.send({createProducts});
 }))
 

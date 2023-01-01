@@ -31,7 +31,6 @@ export default function RegisterScreen() {
 
   useEffect(() => {
     if (userInfo) {
-      console.log(window.location.href);
       navigate(redirect);
     }
   }, [userInfo, redirect, navigate]);

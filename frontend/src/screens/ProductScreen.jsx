@@ -24,6 +24,9 @@ export default function ProductScreen(props) {
   const addToCartHandler =()=>{
      navigate(`/cart/${productId}?qty=${qty}`);
   }
+   
+  console.log("ProductScreen---->",product)
+
   return (
     <div>
       {loading ? (

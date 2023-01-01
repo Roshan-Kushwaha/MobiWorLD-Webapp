@@ -27,7 +27,7 @@ const data = {
             brand:"Apple",
             rating:5.0,
             numReviews:10,
-            description:"The iPhone 13 Pro Max is Apple's biggest phone in the lineup with a massive, '6.7' screen that for the first time in an iPhone comes with 120Hz ProMotion display that ensures super smooth scrolling"
+            description:"The iPhone 13 Pro Max is Apple's biggest phone in the lineup with a massive, '6.7' screen that for the first time in an iPhone comes with 120Hz ProMotion display that ensures super smooth scrolling",
         },
         {
            
