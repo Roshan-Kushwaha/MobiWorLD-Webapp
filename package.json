@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "http-proxy-middleware": "^2.0.6",
+    "jsonwebtoken": "^8.5.1",
+    "mongo": "^0.1.0",
+    "mongoose": "^6.5.1",
+    "nodemon": "^2.0.19",
+    "npx": "^10.2.2"
+  },
+  "name": "mobiworld-website",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "MobiworLD website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MobiworLD",
+    "website"
+  ],
+  "author": "Roshan Kushwaha",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.21.0"
+  }
+}
