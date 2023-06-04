@@ -5,7 +5,7 @@ import productRouter from "./routers/productRouter.js";
 import userRouter from "./routers/userRouter.js";
 import orderRouter from "./routers/orderRouter.js";
 
-dotenv.config({path:"../.env"});
+dotenv.config();
 
 const app = express();
 app.use(express.json());
@@ -14,8 +14,8 @@ app.use(express.urlencoded({extended:true}));
 
 const DB = `${process.env.MONGODB_URL}`
 
-
-mongoose.connect( "mongodb://localhost/MobiWorLD" || DB ).then(() => {
+console.log("DB>>>>>>>",DB);
+mongoose.connect(DB || "mongodb://localhost:27017/MobiWorLD").then(() => {
     console.log("Connection successfull"); 
  }).catch((e) => console.log("No connection"))
 
