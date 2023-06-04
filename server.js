@@ -17,8 +17,16 @@ const DB = `${process.env.MONGODB_URL}`
 console.log("DB>>>>>>>",DB);
 mongoose.connect(DB || "mongodb://localhost:27017/MobiWorLD").then(() => {
     console.log("Connection successfull"); 
- }).catch((e) => console.log("No connection"))
+}).catch((e) => console.log("No connection"))
 
+app.use(express.static("build"))
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Origin, x-Requested-With,Content-Type, Accept, Authorization');
+    next();
+  });
 
 app.use("/api/users" , userRouter);
 app.use("/api/products", productRouter , ()=>{
